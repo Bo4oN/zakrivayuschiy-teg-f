@@ -47,6 +47,7 @@
 
 .dialog_text {
   font-family: var(--font-accent), sans-serif;
+  text-transform: uppercase;
   font-size: 14px;
   line-height: 21px;
 }
@@ -84,6 +85,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 50px;
   gap: 50px;
 }
 
@@ -110,53 +112,40 @@
   border-bottom: 2px solid #000;
 }
 
-.image_fog_road {
-  filter: saturate(3) contrast(140%);
+.saturate-filter-image {
+  filter: saturate(3);
 }
 
-.image_lost_man {
-  position: relative;
+.sepia-light-filter {
   filter: sepia(0.3) brightness(150%);
 }
 
-.image_terminator {
+.hue-rotate-blackout-filter {
   object-position: 15% top;
   filter: hue-rotate(0.85turn) brightness(70%);
 }
 
-.image_old_book {
+.sepia-filter-image {
   object-position: 43% center;
   filter: sepia(0.5);
 }
 
 .image_ship {
-  position: relative;
   object-position: 10% center;
   filter: blur(2px);
 }
 
-.image_vulcan_man {
+.contrast-filter-image {
   filter: contrast(150%);
 }
 
-.image_pilot {
-  filter: contrast(150%) brightness(90%);
+.brightness-filter-image {
+  filter: brightness(90%);
 }
 
-.image_star_wars {
+.invert-filter-image {
   filter: invert();
 }
-
-/*.card_image_container::after {  !!! Без этого псевдокласса лэйбл на изображениях практически нечитаем !!!
-  content: "";                       !!! В задании просят использовать смешение цветов - hard-light !!!
-  z-index: 5;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.4) 0 5%, rgb(255, 255, 255, 0.1) 35%);
-}*/
 
 .image_lable {
   z-index: 6;
@@ -213,8 +202,7 @@
 
 .card__icon-button {
   height: 43px;
-  float: right;
-  padding: 2px 0 0 0;
+  padding: 0;
   margin-right: 5px;
   background-color: transparent;
   border: 2px solid #fff;
@@ -234,14 +222,10 @@
 }
 
 .card__like-button {
-  width: 134px;
-  height: 43px;
+  width: 130px;
+  height: 38px;
   padding: 0;
   background-color: transparent;
-}
-
-.img {
-  margin: auto 0;
 }
 
 .button__text {
@@ -297,8 +281,12 @@
 }
 
 @media (max-width: 375px) {
+  .header {
+    padding: 122px 0;
+  }
   .save-button {
-    height: auto;
+    width: 82vw;
+    height: 84px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -314,10 +302,6 @@
 
   .image_lable {
     right: 13px;
-  }
-
-  .save-button {
-    width: 81.6vw;
   }
 
   .dialog {
